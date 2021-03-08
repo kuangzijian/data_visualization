@@ -1,10 +1,8 @@
-# CMPUT401MiniProject
+# Data Visualization
 
 ## How to start
 
 ```
-$ git clone https://github.com/jajayongjia/HackathonProject.git
-
 $ cd HackathonProject/mysite
 
 start back server
