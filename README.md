@@ -3,7 +3,7 @@
 ## How to start
 
 ```
-$ cd HackathonProject/mysite
+$ cd data_visualization/mysite
 
 start back server
 
