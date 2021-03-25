@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from  .models import Ranking
+from .models import Ranking
 import json
 from django.db.models import Q
 
@@ -12,8 +12,8 @@ def get_all_data(request):
                 "id": one_rank.id,
                 "year": one_rank.yearRange,
                 "location": one_rank.location,
-                "type": one_rank.studentType,
-                "tuition": one_rank.tuitionFee
+                "total number of 1 does": one_rank.numtotal_1dose,
+                "total number of 2 does": one_rank.numtotal_2dose
                 })
         return HttpResponse(status=200, content=json.dumps(data), content_type='application/json')
     else:
@@ -21,38 +21,36 @@ def get_all_data(request):
 
 def getDistinctValue(request):
     if request.method=='GET':
-        data = {"yearRange": [], 'location':[],'studentType':[]}
+        data = {"yearRange": [], 'location': []}
         yearRange = Ranking.objects.distinct().order_by().values('yearRange')
         location = Ranking.objects.distinct().order_by().values('location')
-        studentType = Ranking.objects.distinct().order_by().values('studentType')
+        numtotal_1dose = Ranking.objects.distinct().order_by().values('numtotal_1dose')
+        numtotal_2dose = Ranking.objects.distinct().order_by().values('numtotal_2dose')
         for i in yearRange:
             data['yearRange'].append(i['yearRange'])
         for j in location:
             data['location'].append(j['location'])
-        for j in studentType:
-            data['studentType'].append(j['studentType'])
         return HttpResponse(status=200, content=json.dumps(data), content_type='application/json')
     else:
         return HttpResponse(status=405)
 
-
-def getTuitionForTwoLocation(request):
+def getVaccinationForTwoLocation(request):
     import json
     if request.method=='POST':
-        data = {'location1':[],'location2':[]}
+        data = {'location1': [], 'location2': []}
         body = json.loads(request.body)
-        qs = Ranking.objects.filter(location = body.get('location1'), yearRange=body.get("year"))
-        qs2 =Ranking.objects.filter(location = body.get('location2'), yearRange=body.get("year"))
+        qs = Ranking.objects.filter(location=body.get('location1'), yearRange=body.get("year"))
+        qs2 = Ranking.objects.filter(location=body.get('location2'), yearRange=body.get("year"))
 
         for one_rank in qs:
             data['location1'].append({
-                "studentType": one_rank.studentType,
-                "tuition": one_rank.tuitionFee
+                "numtotal_1dose": one_rank.numtotal_1dose,
+                "numtotal_2dose": one_rank.numtotal_2dose
                 })
         for one_rank in qs2:
             data['location2'].append({
-                "studentType": one_rank.studentType,
-                "tuition": one_rank.tuitionFee
+                "numtotal_1dose": one_rank.numtotal_1dose,
+                "numtotal_2dose": one_rank.numtotal_2dose
                 })
 
         return HttpResponse(status=200, content=json.dumps(data), content_type='application/json')
