@@ -53,21 +53,22 @@ const option = {
     {
       name: 'location1',
       type: 'bar',
-      label: {
-        normal: {
-          show: true,
-        }
+      label: { 
+        show: true,
+        fontWeight: "bold",
+        padding: 0,
+        position: 'right',
       },
       data: []
     },
     {
       name: 'location2',
       type: 'bar',
-      label: {
-        normal: {
-          show: true,
-          position: 'inside'
-        }
+      label: {  
+        show: true,
+        fontWeight: "bold",
+        padding:0,
+        position: 'right',
       },
       data: []
     }
@@ -191,7 +192,7 @@ class ChartComponent extends React.Component {
   render() {
     return (
       <div>
-        <div style={{ 'marginButton': 10, 'marginLeft': 'auto', 'marginRight': 'auto' }}>
+        <div style={{ 'marginButtom': 10, 'marginLeft': 'auto', 'marginRight': 'auto' }}>
           <span style={{ 'marginRight': 5 }}>
             <Text>Location1: </Text>
             <Select style={{ width: 200 }} onChange={(v) => this.handleChangeLocation1(v)}>
@@ -210,19 +211,17 @@ class ChartComponent extends React.Component {
               })}
             </Select>
           </span>
-        </div>
-        <div style={{ 'marginTop': 10 }}>
-
-          <Text>Year: </Text>
-          <Select style={{ width: 200 }}  onChange={(v)=>this.handleChangeYear(v)}>
-            {this.state.years.map(value => {
-              return <Option value={value}>{value}</Option>
-            })}
-          </Select>
-
-        </div>
-        <div style={{ 'marginTop': 10 }}>
-          <Button type="primary" onClick={(e) => this.fetchResultData()} icon="search"> Search</Button>
+          <span style={{ 'marginLeft': 5 }}>
+            <Text>Year: </Text>
+            <Select style={{ width: 200 }}  onChange={(v)=>this.handleChangeYear(v)}>
+              {this.state.years.map(value => {
+                return <Option value={value}>{value}</Option>
+              })}
+            </Select>
+          </span>
+          <span style={{ 'marginLeft': 5 }}>
+            <Button type="primary" onClick={(e) => this.fetchResultData()} icon="search"> Search</Button>
+          </span>
         </div>
         <div style={{ 'marginTop': 20 }}>
           <ReactEcharts option={option} onChartReady={(e) => this.onChartReadyCallback(e)}/>
