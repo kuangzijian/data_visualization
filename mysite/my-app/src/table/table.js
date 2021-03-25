@@ -77,10 +77,10 @@ class TableComponent extends React.Component {
         onFilter: (value, record) => record.type.includes(value)
       },
       {
-        title: 'tuition',
-        dataIndex: 'tuition',
-        // key: 'tuition',
-        sorter: (a, b) => parseInt(a.tuition) - parseInt(b.tuition) ,
+        title: 'total_number',
+        dataIndex: 'total_number',
+        // key: 'total_number',
+        sorter: (a, b) => parseInt(a.total_number) - parseInt(b.total_number) ,
         sortDirections: ['descend', 'ascend'],
       }
     ];
