@@ -98,7 +98,7 @@ class ChartComponent extends React.Component {
           response.json().then(data => {
             if (data) {
               this.setState((state) => {
-                return { ...state, years: data.yearRange, locations: data.location}
+                return { ...state, years: data.yearRange, locations: data.location, types: data.type}
               })
               return
             }
@@ -117,7 +117,7 @@ class ChartComponent extends React.Component {
             chart.setOption({
                 ... option,
                 yAxis: {
-                  data: data.numtotal_1dose
+                  data: data.type
                 }
             })
           })
@@ -145,10 +145,10 @@ class ChartComponent extends React.Component {
                 },
                 series: [
                   {
-                    data: data.location1.map(x=>x.tuition)
+                    data: data.location1.map(x=>x.total_number)
                   },
                   {
-                    data:  data.location2.map(x=>x.tuition)
+                    data:  data.location2.map(x=>x.total_number)
                   }
                 ]
               })
