@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from .models import Ranking
 import json
-from django.db.models import Q
 
 def get_all_data(request):
     if request.method == 'GET':
@@ -35,7 +34,6 @@ def getDistinctValue(request):
         return HttpResponse(status=405)
 
 def getVaccinationForTwoLocation(request):
-    import json
     if request.method=='POST':
         data = {'location1': [], 'location2': []}
         body = json.loads(request.body)

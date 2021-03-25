@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('data', views.get_all_data, name='fetch all'),
-    path('distData', views.getDistinctValue, name="fetch Year range"),
-    path('getLocation', csrf_exempt(views.getVaccinationForTwoLocation), name="fetch two locations")
+    path('getDistinctValue', views.getDistinctValue, name="fetch Year range"),
+    path('getVaccinationForTwoLocation', csrf_exempt(views.getVaccinationForTwoLocation), name="fetch two locations")
 ]

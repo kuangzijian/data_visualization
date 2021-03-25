@@ -89,7 +89,7 @@ class ChartComponent extends React.Component {
 
 
   fetchOptions() {
-    fetch('http://localhost:8000/api/distData')
+    fetch('http://localhost:8000/api/getDistinctValue')
       .then(response => {
         if (response.status !== 200) {
           console.log("not success", response);
@@ -98,7 +98,7 @@ class ChartComponent extends React.Component {
           response.json().then(data => {
             if (data) {
               this.setState((state) => {
-                return { ...state, years: data.yearRange, locations: data.location, types: data.studentType}
+                return { ...state, years: data.yearRange, locations: data.location}
               })
               return
             }
@@ -107,7 +107,7 @@ class ChartComponent extends React.Component {
       }).catch((e) => console.log(e))
   }
   fetchOptions2(chart) {
-    fetch('http://localhost:8000/api/distData')
+    fetch('http://localhost:8000/api/getDistinctValue')
       .then(response => {
         if (response.status !== 200) {
           console.log("not success", response);
@@ -117,7 +117,7 @@ class ChartComponent extends React.Component {
             chart.setOption({
                 ... option,
                 yAxis: {
-                  data: data.studentType
+                  data: data.numtotal_1dose
                 }
             })
           })
@@ -126,7 +126,7 @@ class ChartComponent extends React.Component {
   }
 
   fetchResultData() {
-    fetch('http://localhost:8000/api/getLocation',
+    fetch('http://localhost:8000/api/getVaccinationForTwoLocation',
     {
       method: 'post',
       body: JSON.stringify({'location1': this.state.location1, 'location2': this.state.location2, 'year': this.state.year}),
