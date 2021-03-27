@@ -82,17 +82,17 @@ This project focuses on the questions of interest:
 ```
 - Check the vaccine coverage from the perspective of population taking 1 does and population taking 2 doses for one province in a specific month:
 ```
-![1](https://github.com/kuangzijian/Image-Stitching-and-Perspective-Correction/blob/main/results/line_detection.png) 
+![1](https://github.com/txrxrxr/data_visualization/blob/master/mysite/my-app/public/pic1.png) 
 
 ```
 - Compare the vaccine coverages between two provinces in a specific month:
 ```
-![1](https://github.com/kuangzijian/Image-Stitching-and-Perspective-Correction/blob/main/results/line_detection.png) 
+![1](https://github.com/txrxrxr/data_visualization/blob/master/mysite/my-app/public/pic2.png) 
 
 ```
 - Display the detail of the dataset (http://localhost:3000/detail):
 ```
-![1](https://github.com/kuangzijian/Image-Stitching-and-Perspective-Correction/blob/main/results/line_detection.png) 
+![1](https://github.com/txrxrxr/data_visualization/blob/master/mysite/my-app/public/pic3.png) 
 
 
 ## Contributing
