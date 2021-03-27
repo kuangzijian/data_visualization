@@ -60,8 +60,8 @@ This project focuses on the questions of interest:
 ```sh
 Clone the repo (the dataset "db.sqlite3" file can be found under the root folder after clone the repo)
 $ cd data_visualization/mysite
-$ virtualenv venv --python=python3
-$ source venv/bin/activate
+$ pip install virtualenv
+$ .\venv\Scripts\activate
 $ pip install -r requirements.txt
 ```
 
