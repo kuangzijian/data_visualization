@@ -114,6 +114,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## References
 Django: https://www.djangoproject.com/
+
 React: https://reactjs.org/
+
 Dataset: National vaccination coverage: https://health-infobase.canada.ca/covid-19/vaccination-coverage/
 
