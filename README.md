@@ -57,25 +57,25 @@ This project focuses on the questions of interest:
 
 ### Prerequisites
 ```sh
-1. Clone the repo
-2. $ cd data_visualization/mysite
-3. $ virtualenv venv --python=python3
-4. $ source venv/bin/activate
-5. $ pip install -r requirements.txt
+Clone the repo
+$ cd data_visualization/mysite
+$ virtualenv venv --python=python3
+$ source venv/bin/activate
+$ pip install -r requirements.txt
 ```
 
 ### Migrate and Run the back-end Server
 ```
-1. $ python manage.py makemigrations
-2. $ python manage.py migrate
-3. $ python manage.py runserver
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
 ```
 
 ### Start front-end client page
 ```
-1. $ cd my-app
-2. $ npm install
-3. $ npm start
+$ cd my-app
+$ npm install
+$ npm start
 ```
 
 ### Interact with the data visualization system in your browser
