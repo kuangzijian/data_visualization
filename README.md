@@ -61,6 +61,7 @@ This project focuses on the questions of interest:
 Clone the repo (the dataset "db.sqlite3" file can be found under the root folder after clone the repo)
 $ cd data_visualization/mysite
 $ pip install virtualenv
+$ virtualenv venv
 $ .\venv\Scripts\activate
 $ pip install -r requirements.txt
 ```
