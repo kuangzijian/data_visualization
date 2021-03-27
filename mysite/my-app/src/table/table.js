@@ -1,6 +1,4 @@
-
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './table.css';
 import { Table, Divider, Tag, Button , Spin} from 'antd';
@@ -13,7 +11,7 @@ class TableComponent extends React.Component {
   };
 
   componentDidMount(){
-    fetch('http://localhost:8000/api/data').then(
+    fetch('http://localhost:8000/api/get_all_data').then(
       (response) =>  {
         if (response.status !== 200) {
           console.log("not success", response);
