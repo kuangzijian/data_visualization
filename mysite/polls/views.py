@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from .models import Ranking
 import json
-from django.db.models import Q
 
 def get_all_data(request):
+    # a function to retrieve all data from database
     if request.method == 'GET':
         data = {"data": []}
         qs = Ranking.objects.all()
@@ -20,6 +20,7 @@ def get_all_data(request):
         return HttpResponse(status=405)
 
 def getDistinctValue(request):
+    # a function to retrieve the data that can be dumped into the filters
     if request.method=='GET':
         data = {"yearRange": [], 'location':[],'type':[]}
         yearRange = Ranking.objects.distinct().order_by().values('yearRange')
@@ -37,6 +38,7 @@ def getDistinctValue(request):
 
 
 def getVaccinationForTwoLocation(request):
+    # a function to retrieve the vaccination information based on the location and year filters.
     import json
     if request.method=='POST':
         data = {'location1':[],'location2':[]}

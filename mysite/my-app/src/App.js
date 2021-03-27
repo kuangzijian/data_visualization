@@ -1,13 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TableComponent from './table/table.js'
-// import IconLinkComponent from './icon/icon.js'
 import ChartComponent from './chart/chart.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Row, Col, Layout, Icon, Button } from 'antd';
 const { Header, Footer, Content } = Layout;
-
 
 function App() {
   function iconOnClickHandler(){
