@@ -50,7 +50,7 @@ This project focuses on the questions of interest:
 * What is the comparison of vaccination coverage between two provinces (per month)?
 * We built a data visualization project to visualize the COVID-19 vacci-nation coverage across each province in Canada based on Django and React. 
 
-### Built With and Dataset
+### Built With and Dataset (to be noticed, the dataset is commited in the source control, you will find the "db.sqlite3" file under the root folder)
 * [Django](https://www.djangoproject.com/)
 * [React](https://reactjs.org/)
 * [Dataset: National vaccination coverage](https://health-infobase.canada.ca/covid-19/vaccination-coverage/)
