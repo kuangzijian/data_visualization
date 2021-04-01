@@ -13,7 +13,7 @@ def get_all_data(request):
                 "year": one_rank.yearRange,
                 "location": one_rank.location,
                 "type": one_rank.type,
-                "total number": one_rank.total_number
+                "total_number": one_rank.total_number
                 })
         return HttpResponse(status=200, content=json.dumps(data), content_type='application/json')
     else:
